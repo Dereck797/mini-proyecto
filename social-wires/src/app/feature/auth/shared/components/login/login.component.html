@@ -1,0 +1,29 @@
+<div style="">
+    <img src="../../../../../../assets/img/Group 2.png" class="eye"/>
+    <img src="../../../../../../assets/img/image 2.png" class="heaven"/>
+</div>
+<form [formGroup]="miFormulario" (ngSubmit)="login()">
+    <h2>Welcome To Wires</h2>
+    <button>Sign in</button>
+    <div class="inputbox">
+        <i class="fa-regular fa-envelope"></i>
+        <input type="email" formControlName="email" required>
+        <label>Email</label>
+    </div>
+    <div *ngIf="campoValido('email')">
+        <mat-error class="error">
+                El correo electrónico no es válido.
+        </mat-error>
+    </div>
+    <div class="inputbox">
+        <i class="fa-solid fa-lock"></i>
+        <input type="password" formControlName="password" required>
+        <label>Password</label>
+    </div>
+    <div *ngIf="campoValido('password')">
+        <mat-error class="error">
+                Debe ser de minimo 6 caracteres sin espacios. 
+        </mat-error>
+    </div>
+    <button type="submit">Create</button>
+</form>
