@@ -1,0 +1,36 @@
+<div class="login">
+  <div class="form-container">
+    <div class="header-container">
+        <img src="../../../assets/img/image 2.png" alt="">
+      <h1 class="title">
+        Welcome To Wires
+      </h1>
+      <button type="submit" class="signin-button">Sign in</button>
+    </div>
+
+    <form (ngSubmit)="onEdit()" class="form" #myForm="ngForm">
+      <div class="input-group">
+        <label for="password">Nickname</label>
+        <input type="text" name="nickname" required #nicknameInput="ngModel" id="nickname" [(ngModel)]="person.nickname"/>
+        <p class="message-error" [class.invalid]="nicknameInput.invalid">Este campo es requerido</p>
+      </div>
+      <div class="input-group">
+        <label for="password">Name</label>
+        <input type="text" name="name" required #nameInput="ngModel" id="name" [(ngModel)]="person.name"/>
+        <p class="message-error" [class.invalid]="nameInput.invalid">Este campo es requerido</p>
+      </div>
+      <div class="input-group">
+        <label for="email">email</label>
+        <input type="email" name="email" required #emailInput="ngModel" id="email" [(ngModel)]="person.email" />
+        <p class="message-error" [class.invalid]="emailInput.invalid">Este campo es requerido</p>
+      </div>
+      <div class="input-group">
+        <label for="password">password</label>
+        <input type="password" name="password" required #passwordInput="ngModel" id="password" [(ngModel)]="person.password" />
+        <p class="message-error" [class.invalid]="passwordInput.invalid">Este campo es requerido</p>
+        <button type="submit" [disabled]="myForm.invalid" class="button-action">Create</button>
+      </div>
+
+    </form>
+  </div>
+</div>
